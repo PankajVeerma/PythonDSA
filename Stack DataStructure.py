@@ -1,4 +1,4 @@
-#Stack Datastructure Using Linked LIst
+#Stack Datastructure Using 
 class Stack:
     def __init__(self):
         self.item=[]

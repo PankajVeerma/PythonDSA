@@ -18,7 +18,7 @@ class Stack:
     def size(self):
         return self.item_count         
  
- 
+  
 s = Stack()
 s.push(2)
 s.push(4)

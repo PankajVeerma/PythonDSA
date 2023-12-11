@@ -8,7 +8,8 @@ class BST:
     def __init__(self):
          self.root=None
     def insert(self,):
-        self.root=self.r_insert(self.root,data)           
+        self.root=self.r_insert(self.root,data)  
+        #r_   means  recurssive         
     def r_insert(self,root,data):
         if root is None:
             return Node(data)
@@ -52,8 +53,36 @@ class BST:
         return result
     def r_post_order(self,root,result):
         if root :
-          
+            result.append(root.item)
             self.r_post_order(root.left,result)
             self.r_post_order(root.right,result)
-            result.append(root.item)
-            
+    def min_value(self,temp) :
+        current=temp
+        while current.left is not None:
+            current=current.left
+            return current.item
+    def max_value(self,temp):
+        current=temp
+        while current.right is not None:
+            current=current.left
+            return current.item
+    def Delete(self,data):
+        self.root = r_delete(self,root,data)    
+        pass 
+    def r_delete(self,root,data):
+        if root is None:
+            return root
+        if data<root.item:
+            self.left = self.r_dalete(root.left,data)
+        elif data>root.item:
+            self.right = self.r_dalete(root.right,data)
+        else:
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+            root.item = self.min_value(root,right)
+            self.r_delete(root.right,root.item)
+        return root
+    def size(self):
+        len(self.r_inorder())        
